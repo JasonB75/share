@@ -1,0 +1,51 @@
+package com.superking75.media_lib;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        TextView outputText1 = (TextView) findViewById(R.id.TextField1);
+        TextView outputText2 = (TextView) findViewById(R.id.TextField2);
+        TextView outputText3 = (TextView) findViewById(R.id.TextField3);
+        TextView outputText4 = (TextView) findViewById(R.id.TextField4);
+        TextView outputText5 = (TextView) findViewById(R.id.TextField5);
+        outputText1.setText("Hey1");
+        outputText2.setText("Hey2");
+        outputText3.setText("Hey3");
+        outputText4.setText("Hey4");
+        outputText5.setText("Hey5");
+
+        int numSongs = 0;
+        double totalCost = 0.00;
+        int totalRatings = 0;
+        int totalStuff = 0;
+
+        outputText1.setText("Welcome to your Media Library \n\n");
+
+        Song song1 = new Song(4, "The Actual Superbowl song", true, 0.01);
+        totalStuff +=1;
+
+        outputText2.setText("Song: "+ song1.getTitle()+ ". It costs: $"+ song1.getPrice()+"\n");
+
+        Movie movie1 = new Movie(0, "fRANCe", false, 330);
+        outputText3.setText("The movie: " + movie1.getTitle()+ " is "+movie1.getDurationHour()+" hours and "+movie1.getDurationMin()+" Minutes long." +"\n");
+        totalStuff +=1;
+
+        Book book1 = new Book(10, "Hey CsA", true);
+        outputText4.setText("Your book: "+book1.getTitle() + "has a rating of: "+book1.getRating() +"\n");
+        totalStuff +=1;
+
+        outputText5.setText("You have this many stuffs: "+ totalStuff);
+
+
+
+
+
+    }
+}
